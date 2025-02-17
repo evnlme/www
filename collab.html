@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-17 Mon 15:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Independence and Collaboration</title>
+<meta name="author" content="Evan Lee" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Independence and Collaboration</h1>
+<p>
+I was raised to be independent. To not rely on other people. To figure it out myself. I felt ashamed and inadequate when I received help. That the best way to pay back the debt I owed was to become a person who could do it all, a person who couldn&rsquo;t be helped no matter what. To protect myself, I tended to unconsciously select situations where I could do it all myself. I needed to become my own support system because I couldn&rsquo;t trust or rely on anything else. This principle of independence has followed me from before primary school, through secondary and post-secondary schools, and through my first corporate job. Eventually, I learned that I couldn&rsquo;t do it all myself. This was a minor setback; I just needed to acquire more skills and experience. Eventually, I learned that even if I had the skills and experience, I still wouldn&rsquo;t be able do it all myself. Okay. But what if there were more of me, like a whole legion of us? But wouldn&rsquo;t we all have the same blind spots? That&rsquo;s a big problem. What if there was variation among the individuals? Then we would need to evaluate each variant and their interactions with other variants and their environment. That kind of sounds like evolution. Can you please take a look outside. Variants are already here. But what are they doing?
+</p>
+
+<p>
+The culture of independence is everywhere. It has been taught and reinforced by our schools for decades. Almost all products and services are designed expecting independent users. It&rsquo;s hard to imagine life before the age of independence.
+</p>
+
+<p>
+Technology has made independence more accessible than ever before. Nowadays, you can get almost anything without stepping out of your home or interacting with anyone.
+</p>
+
+<p>
+I think independence is a good thing. Everyone should have the right to exercise their independence. Conversely, they should also have the option to not exercise it. Culturally, the former is praised and the latter is discouraged. A lot of people have no choice but to be independent. Independence is forced on them.
+</p>
+
+<p>
+I have a feeling that forced independence at the societal level isn&rsquo;t sustainable. Independence isn&rsquo;t something that can be obtained for free. Infrastructure, technology, and education are all needed to make independence happen and all of them are imperfect. We are forced to take up certain technologies and their imperfections to achieve independence. This same independence has suppressed our instinct to regularly seek out others and build rapport. Loneliness is a natural consequence. If we were built to be independent, then loneliness shouldn&rsquo;t exist. Loneliness doesn&rsquo;t work unless it is observed by someone else. We are a social species after all. Maybe we sacrificed too much to achieve independence.
+</p>
+
+<p>
+I believe independence itself is an exception and collaboration should be the norm. Collaboration is trusting, relying on, and working with others. Collaboration and independence are two sides of the same coin. In our quest to achieve independence, collaboration suffered.
+</p>
+
+<p>
+Collaborations used to be more commonplace. Making meals together used to be a regular experience; now, it&rsquo;s more commonly associated with special occasions. Even if you were inexperienced, others would still want you for whatever you could offer. Your contributions meant something to the larger community.
+</p>
+
+<p>
+It&rsquo;s different now. Independence is now the dominant force. Other people don&rsquo;t need you because they are independent. Knowing that and being independent yourself, you can easily relocate yourself and compete in the global market. If you&rsquo;re lucky, you might find a group that shares your goals and values and collaborate with them. But for most people, they are too busy working at some company to maintain their dependence. Just because you are working with other people in the same company and maybe the same project doesn&rsquo;t mean you are collaborating. There could be a lack of trust or reliance. Most people feel replaceable too. This is by design for top-down companies. In fact, companies are trying seek independence for themselves. The culture of independence is pervasive but collaboration doesn&rsquo;t need to suffer.
+</p>
+
+<p>
+How can collaboration be reignited? This is a complex issue that will require a cultural shift to even have a chance of realizing. Let&rsquo;s consider the subset of people who have the time and resources to collaborate but aren&rsquo;t collaborating. How can the seed of collaboration be planted in them? Is there anything unique to collaboration compared with other social activities? Yes, collaboration results in the intentional creation of something of value between multiple people. Collaboration will appeal to people who want to create but are hesitant to do it alone and people who create but want to do it with others. Let&rsquo;s focus on the latter group of people who are already creating. For them, the main barrier is finding others to collaborate with. But if they can find their people, then collaboration can progress. What makes finding others particularly challenging in this case is that there aren&rsquo;t that many creators to begin with, especially in high tech. The popular thing to do is to consume rather than create. I don&rsquo;t think this is going to change any time soon, so we need to bring those few creators together intentionally through some sort of app or organization. I can&rsquo;t wait to see the amazing things produced by these rare collaborations. I know they will be amazing because almost all successful startups started as collaborations. After we get existing creators to collaborate, we need to solve the collaboration problem among non-creators. I don&rsquo;t think grouping non-creators together will lead to very successful collaborations. Even if we somehow get one independent creator per group, the number of groups will still vastly outnumber the number of independent creators. Not to mention that creators tend to want to work with other creators. If the success of the collaboration is the issue, what are some ways the success rate can be increased. Prior amicable relationships will definitely help. Being in person too. Having the time to commit and not being on the independence grind as well. Schools are good places to find those conditions. Families are also good candidates. The best we can do is appeal to those users through promotion and information. Ideally, I would go in, snap my fingers, and change the school curriculum to let students collaborate instead of being swamped in coursework. We have considered ways to reignite collaborations in creators and non-creators with the time and resources. How about the rest of the population, those without the time and resources? I don&rsquo;t think they can be helped right away. Companies are the largest time sink; it doesn&rsquo;t make sense for them to give away time and resources without expecting anything in return. There might be once a year events but this is far from the regular frequency people need. A cultural shift needs to happen collaboration to prosper.
+</p>
+
+<p>
+What does all this have to do with my independence? I was so invested in my independence that I rediscovered the importance of collaboration and realized that society isn&rsquo;t set up in a way that makes the magic happen. I know I can&rsquo;t change this alone so collaborate I must.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Evan Lee</p>
+<p class="date">Created: 2025-02-17 Mon 15:18</p>
+</div>
+</body>
+</html>
