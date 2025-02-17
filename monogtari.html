@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-17 Mon 11:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reflections on the Monogatari Series</title>
+<meta name="author" content="Evan Lee" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Reflections on the Monogatari Series</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2fcde2e">1. Intro</a>
+<ul>
+<li><a href="#orgc44891f">1.1. Scope</a></li>
+</ul>
+</li>
+<li><a href="#orgfc7574a">2. 化物語 ／ Bakemonogatari</a>
+<ul>
+<li><a href="#orga81999f">2.1. ひたぎクラブ ／ Hitagi Crab</a>
+<ul>
+<li><a href="#org493e6e1">2.1.1. 001</a></li>
+<li><a href="#org0b72ecb">2.1.2. 002</a></li>
+<li><a href="#org9debf3a">2.1.3. 003</a></li>
+<li><a href="#orgd431d73">2.1.4. 004</a></li>
+<li><a href="#orgf41d410">2.1.5. 005</a></li>
+<li><a href="#org2b373df">2.1.6. 006</a></li>
+<li><a href="#orgac71c2a">2.1.7. 007</a></li>
+<li><a href="#org92c5a57">2.1.8. 008</a></li>
+</ul>
+</li>
+<li><a href="#org5fb6117">2.2. まよいマイマイ ／ Mayoi Snail</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2fcde2e" class="outline-2">
+<h2 id="org2fcde2e"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I want to critically read the Monogatari Series. My raison d&rsquo;être for learning Japanese. I never expected that I would be using critical reading skills voluntarily yet here I am. Leisurely deliberating the meanings of things is actually quite meditative.
+</p>
+</div>
+<div id="outline-container-orgc44891f" class="outline-3">
+<h3 id="orgc44891f"><span class="section-number-3">1.1.</span> Scope</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+I plan to read all the canon stories. There&rsquo;s a bunch of short stories outside of the light novels so tracking which ones I still need to read is not simple. Luckily, it seems like someone from r/araragi has already compiled a list.
+</p>
+
+<p>
+List of stories: <a href="https://redd.it/5t7kcq">https://redd.it/5t7kcq</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc7574a" class="outline-2">
+<h2 id="orgfc7574a"><span class="section-number-2">2.</span> 化物語 ／ Bakemonogatari</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga81999f" class="outline-3">
+<h3 id="orga81999f"><span class="section-number-3">2.1.</span> ひたぎクラブ ／ Hitagi Crab</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org493e6e1" class="outline-4">
+<h4 id="org493e6e1"><span class="section-number-4">2.1.1.</span> 001</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+The narrator describes Senjougahara Hitagi&rsquo;s distant or perhaps weightless relationship with school. She&rsquo;s like a cloistered princess (深窓の令嬢) confined to the pages of her books. She seems like the type who reads whatever is in reach (濫読派). Outside of academics, she&rsquo;s a non-interactable character with a fleeting (儚げ) existence.
+</p>
+
+<p>
+The narrator was somehow familiar enough with the top academic rankings to recognize patterns in them. Why would he bother looking up at the top ranks if his grades were far from it? It seems like academic performance is important to him in some way.
+</p>
+
+<p>
+The narrator mentions that school is a strange place where people without friends end up forming their own circles. I&rsquo;m pretty sure this is just a human thing to do and this would happen anywhere, not just school.
+</p>
+
+<p>
+The narrator claims that Senjougahara&rsquo;s situation is nothing to worry about. After all, very few if any meaningful connections made in school will last past school. With the passage of time, the school experience will become a blur of memories. The narrator&rsquo;s points are valid but I disagree with him. Sure, living invisibly might turn out okay, but it will be no better than okay. I think most people want to strive for more than okay. To do that, they must become more than themselves which means assimilating and interacting with the outside world in meaningful ways.
+</p>
+
+<p>
+The narrator mentions that he was a loner up until the end of the prior school year. The narrator references spring break and Golden Week as 地獄 (hell) and 絵空事 (fantasy) respectively.
+</p>
+
+<p>
+When the narrator encounters Senjougahara, he simultaneously feels the weightlessness in her body and finds salience in her existence. Weight, under the force of gravity, tethers people to the world. A lack of it could explain Senjougahara&rsquo;s detached existence. Contradicting her weightlessness, she falls into the narrator and becomes a more significant existence to him.
+</p>
+</div>
+</div>
+<div id="outline-container-org0b72ecb" class="outline-4">
+<h4 id="org0b72ecb"><span class="section-number-4">2.1.2.</span> 002</h4>
+</div>
+
+<div id="outline-container-org9debf3a" class="outline-4">
+<h4 id="org9debf3a"><span class="section-number-4">2.1.3.</span> 003</h4>
+</div>
+
+<div id="outline-container-orgd431d73" class="outline-4">
+<h4 id="orgd431d73"><span class="section-number-4">2.1.4.</span> 004</h4>
+</div>
+
+<div id="outline-container-orgf41d410" class="outline-4">
+<h4 id="orgf41d410"><span class="section-number-4">2.1.5.</span> 005</h4>
+</div>
+
+<div id="outline-container-org2b373df" class="outline-4">
+<h4 id="org2b373df"><span class="section-number-4">2.1.6.</span> 006</h4>
+</div>
+
+<div id="outline-container-orgac71c2a" class="outline-4">
+<h4 id="orgac71c2a"><span class="section-number-4">2.1.7.</span> 007</h4>
+</div>
+
+<div id="outline-container-org92c5a57" class="outline-4">
+<h4 id="org92c5a57"><span class="section-number-4">2.1.8.</span> 008</h4>
+</div>
+</div>
+<div id="outline-container-org5fb6117" class="outline-3">
+<h3 id="org5fb6117"><span class="section-number-3">2.2.</span> まよいマイマイ ／ Mayoi Snail</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Evan Lee</p>
+<p class="date">Created: 2025-02-17 Mon 11:38</p>
+</div>
+</body>
+</html>
