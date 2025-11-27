@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-27 Thu 12:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Evan Lee" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WK15EWYH7V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WK15EWYH7V');
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb8ca73d">1. (0) My first note!</a></li>
+<li><a href="#org0dc3605">2. (1) Emacs Info</a></li>
+<li><a href="#org7bce97e">3. (2) Apple sauce</a></li>
+<li><a href="#org11f9748">4. (3) Drawing goals</a></li>
+<li><a href="#org82e98df">5. (4) Habits</a></li>
+<li><a href="#org5e93a73">6. (5) Minecraft is hard</a></li>
+<li><a href="#org4a06332">7. (6) Breaking a fast</a></li>
+<li><a href="#org64300e4">8. (7) Food and xenobiotics metabolism</a></li>
+<li><a href="#org8ed0d3a">9. (8) Writing on the wall</a></li>
+<li><a href="#org97fbb85">10. (9) Distractions</a></li>
+<li><a href="#org3eb8fc7">11. (10) To draw well, think in 3d</a></li>
+<li><a href="#orgbbfada9">12. (11) Distractions from the future</a></li>
+<li><a href="#org9e281fc">13. (12) Linen</a></li>
+<li><a href="#org6141075">14. (13) Beyond ideas</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8ca73d" class="outline-2">
+<h2 id="orgb8ca73d"><span class="section-number-2">1.</span> (0) My first note!</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I&rsquo;m happy that I made a configuration that&rsquo;s good enough for me. To activate, it&rsquo;s simply &ldquo;SPC n n n&rdquo;. I can track how many of these I make with my custom counter. It also records the datetime, though I don&rsquo;t remember examples where datetime was important to me. I guess it&rsquo;s just a nice to have.
+</p>
+</div>
+</div>
+<div id="outline-container-org0dc3605" class="outline-2">
+<h2 id="org0dc3605"><span class="section-number-2">2.</span> (1) Emacs Info</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I wonder how I can copy info links here. &ldquo;M-x info&rdquo; or &ldquo;SPC h i&rdquo; takes me to the manuals. It would be useful to be able to link to them internally. I&rsquo;m not too sure how.
+</p>
+
+<p>
+I spent some time trying to figure it out but whenever I create a link and try taking it, I keep getting prompted to create a section in the same file. The links I wanted to include are the following:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://orgmode.org/manual/Template-elements.html">https://orgmode.org/manual/Template-elements.html</a></li>
+<li><a href="https://orgmode.org/manual/Template-expansion.html">https://orgmode.org/manual/Template-expansion.html</a></li>
+<li><a href="https://orgmode.org/manual/Capture-templates.html">https://orgmode.org/manual/Capture-templates.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7bce97e" class="outline-2">
+<h2 id="org7bce97e"><span class="section-number-2">3.</span> (2) Apple sauce</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+I have a new tool and it&rsquo;s apple sauce. I was wondering what to do about my intense pangs of hunger which usually result in me consuming a lot of unhealthy foods. I believe it may be associated with a sudden drop in blood glucose. The common way to alleviate the drop is take about 15g of sugar or simple carbohydrates. I think apple sauce fits the bill. I enjoy its slightly acidic taste and it feels satisfying. And the important part. It&rsquo;s shelf stable with no preparation. Each dose is about 100-120g. I believe this new tool will have powerful effects
+</p>
+
+<p>
+I do need to note that these drops in glucose are generally harmful to me and my goals. The apple sauce is intended to alleviate that harm.
+</p>
+</div>
+</div>
+<div id="outline-container-org11f9748" class="outline-2">
+<h2 id="org11f9748"><span class="section-number-2">4.</span> (3) Drawing goals</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+I want to nail a good head shape. Something that reads well from any angle. I also want to learn the lengths and thicknesses of the arms and legs. Let&rsquo;s not forget about the torso. Sounds like figure drawing to me.
+</p>
+
+<p>
+I also want to applaud myself for using these notes for their intended purpose. I&rsquo;m reacting to what I drew. Good job me!
+</p>
+</div>
+</div>
+<div id="outline-container-org82e98df" class="outline-2">
+<h2 id="org82e98df"><span class="section-number-2">5.</span> (4) Habits</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+It&rsquo;s more important to get into the habit of consistently doing something at all. There&rsquo;s a limit to forcing myself to do something in a certain way. And that limit is not large. First consistently do something. Second add a small amount of complexity. Small enough that the augmented task still feels easy to do consistently. Easy to do one time isn&rsquo;t enough; it needs to be easy to do over and over.
+</p>
+
+<p>
+This is exactly what I&rsquo;m trying to do with reading, writing, and drawing. Just do it. Don&rsquo;t worry about constraints and other complexities until I&rsquo;m doing it consistently.
+</p>
+</div>
+</div>
+<div id="outline-container-org5e93a73" class="outline-2">
+<h2 id="org5e93a73"><span class="section-number-2">6.</span> (5) Minecraft is hard</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Yeah, that&rsquo;s right. Minecraft is hard. Rather, it doesn&rsquo;t scale. No matter the size of your project, you&rsquo;re limited to manipulating one block at a time. At least that is the case in survival mode. I made a terrible mistake of not scaling the projects I wanted to do in Minecraft to the time I&rsquo;m willing to commit to it. The projects are too big. Not big absolutely but relatively. I already sunk so much time into them. I think I should finish them. But there&rsquo;s still so much left to do.
+</p>
+
+<p>
+Anyways, the real problem is Minecraft is keeping me from doing the other things I want to do. This is bad. I could relegate the game to weekends only, but that means the projects I set out to do will take that much longer. I think that&rsquo;s probably fine. It&rsquo;ll probably be fine. I guess I&rsquo;m afraid that I won&rsquo;t be able to complete the projects. But the scarier things is not being able to pursue my other priorities if I don&rsquo;t do this. Goodbye Minecraft. See you next week. Hopefully, I won&rsquo;t have simulation sickness when I play you.
+</p>
+</div>
+</div>
+<div id="outline-container-org4a06332" class="outline-2">
+<h2 id="org4a06332"><span class="section-number-2">7.</span> (6) Breaking a fast</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+I need to be careful when reintroducing food into my system after 2 to 3 hours of not eating. If I suddenly eat some fast digesting food like apple sauce, I end up digesting it too quickly which causes some discomfort. I believe I can avoid the discomfort if I eat something high in protein and fat like an egg. Dairy would have been a great choice but the dairy choices of the A2 variety are limited. Ideally, I would want some A2 yogurt but that would require me to make the yogurt from A2 milk since A2 yogurt isn&rsquo;t readily available at the markets. I can also avoid the discomfort by not eating anything. The key to all of this is to be aware of how long since I last ate.
+</p>
+</div>
+</div>
+<div id="outline-container-org64300e4" class="outline-2">
+<h2 id="org64300e4"><span class="section-number-2">8.</span> (7) Food and xenobiotics metabolism</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+I learned about xenobiotics metabolism recently. It is responsible for detoxifying toxins and other substances like drugs. I feel like my understanding of how food affects the body has improved through incorporating genetics, epigenetics, microbiome, and now xenobiotic metabolism. The theory I have is that compromised xenobiotic metabolism can lead to chronic low-grade inflammation. There is a family of enzymes cytochrome P450 (CYP450) which is responsible for the bulk of xenobiotic metabolism. Even within CYP450, there are enzymes such as CYP1A1 which increase toxicity, so it&rsquo;s important to distinguish between good and bad CYP. Grapefruit and black pepper are known to decrease good CYP. Cruciferous vegetables and garlic increase good CYP and decrease bad CYP. Mycotoxins and other contaminants decrease good CYP and increase bad CYP. Fine tuning CYP and levels and AhR diets both aim to support natural detoxification and immune functions.
+</p>
+
+<p>
+Mycotoxin contamination in foods is most often found in grains. Here, grains are inclusive of grains, lentils, nuts, and seeds. It makes me wonder whether I can have my peanuts, corn, and rice as long as they&rsquo;re essentially free of mycotoxins. Though, it isn&rsquo;t clear how I would practically measure mycotoxin content.
+</p>
+</div>
+</div>
+<div id="outline-container-org8ed0d3a" class="outline-2">
+<h2 id="org8ed0d3a"><span class="section-number-2">9.</span> (8) Writing on the wall</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+I have been thinking of doing more marketing for my work and myself. Based on what I have learned from ChatGPT, marketing should actually be around 50% of the work. That&rsquo;s a lot more than I expected. I even unconciously refuse to believe that that amount of marketing is correct but logically it makes sense. I would like to shift to towards a marketing mindset. To do that, I have identified a couple of things I could market. First, my random excursions with ChatGPT. I could summarize my findings and post it to a wide variety of places. This one is simple since the core of the activity is finding and exploring. Second, my media consumption. For non-fiction, I can summarize like the first. For fiction, summaries will not suffice. I will need to reflect, interpret, and stand by my own opinions. Third, my city council comments. And fourth, my projects. There are a lot of existing opportunities to market. All I need to do is spend the extra time to market them.
+</p>
+</div>
+</div>
+<div id="outline-container-org97fbb85" class="outline-2">
+<h2 id="org97fbb85"><span class="section-number-2">10.</span> (9) Distractions</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+I need to refocus. I have succumbed to distractions without even realizing it. The distractions aren&rsquo;t problems themselves. Setting time aside to be distracted is fine; distractions are an eseential part of life. What is unacceptable is the lack of intention. I should be thinking about the best times and places to be distracted.
+</p>
+
+<p>
+I have decided to relegate videos to an inquiry only form of consumption. Passively watching is an ineffective use of my time. I will also redouble my efforts to limit media feeds to once a week. Not one day but exactly once a week. Allowing myself to check multiple times in a single day is a major distraction.
+</p>
+</div>
+</div>
+<div id="outline-container-org3eb8fc7" class="outline-2">
+<h2 id="org3eb8fc7"><span class="section-number-2">11.</span> (10) To draw well, think in 3d</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+I have come to realize that drawing requires thinking in 3d. I guess that&rsquo;s where the advocates of life drawing come from. The artist is drawing in 3 dimensions. The first 2 dimensions are the drawing surface. The third dimension is an imaginary depth. A single stroke of the pen will move through all 3 dimensions and the artist is aware of that. Awareness of the hidden third dimension of depth allows the artist to modulate how their pen moves in the other 2 dimensions.
+</p>
+
+<p>
+I wonder if this principle extends to animation as well.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbbfada9" class="outline-2">
+<h2 id="orgbbfada9"><span class="section-number-2">12.</span> (11) Distractions from the future</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+Sometimes I find myself distracting myself with tasks that I planned to do later. Not a little later but much later. This comes with the cost of delaying the tasks I need to focus on now. Even though I&rsquo;m technically productive, I&rsquo;m not prioritizing the tasks that are actually important in the moment. When I compare the priority of that random future task to the stuff that matters, the stuff that matters wins almost every time. I already decided on the prioritization of tasks; I should stick with it.
+</p>
+</div>
+</div>
+<div id="outline-container-org9e281fc" class="outline-2">
+<h2 id="org9e281fc"><span class="section-number-2">13.</span> (12) Linen</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Linen is great but it wrinkles a lot in the dryer. Just noting that I should prefer to air dry them.
+</p>
+</div>
+</div>
+<div id="outline-container-org6141075" class="outline-2">
+<h2 id="org6141075"><span class="section-number-2">14.</span> (13) Beyond ideas</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+I&rsquo;m bothered that I&rsquo;m satisfied with just imagining my ideas most of the time. Imagination alone won&rsquo;t change reality. I need to resolve myself to take my ideas one step further into the realm of execution. To do that, I have formulated a strategy. First, I need to make time for idea execution. I&rsquo;m not sure about the exact duration, but let&rsquo;s start with 30 minutes. During that time, I need to make the most of an idea.  Execution can be in any medium; I&rsquo;m not limited to writing but I expect it to be most common. Most ideas will fail the execution process, but there may be some promising ones which I should make additional time for. Second, ideas are fleeting and I don&rsquo;t want to rely too much on external tools. In order to remember ideas without being distracted by them, I should recite my priorities and ideas whenever I&rsquo;m distracted. The number of ideas I should bother to remember is limited to 1 because I&rsquo;m mostly limited by the time I have for execution.
+</p>
+
+<p>
+I think 30 minutes in the morning before work would be the best time. On the weekends, I could make time to pursue the promising ideas.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Evan Lee</p>
+<p class="date">Created: 2025-11-27 Thu 12:40</p>
+</div>
+</body>
+</html>
