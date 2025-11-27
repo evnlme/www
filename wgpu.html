@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-11-27 Thu 12:40 -->
+<!-- 2025-11-27 Thu 13:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>wgpu</title>
@@ -202,6 +202,39 @@
 
   gtag('config', 'G-WK15EWYH7V');
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Noto+Serif+KR:wght@200..900&family=Noto+Serif+SC:wght@200..900&family=Noto+Serif+TC:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family:
+      /* Noto Serif */
+      "Noto Serif",
+      "Noto Serif JP",
+      "Noto Serif TC",
+      "Noto Serif SC",
+      "Noto Serif KR",
+      /* Latin serif fallback */
+      Georgia, "Times New Roman", Times,
+      /* Japanese serif */
+      "Hiragino Mincho ProN", "Yu Mincho", "游明朝体",
+      /* Simplified Chinese serif */
+      "STSong", "Songti SC", "Noto Serif SC",
+      /* Traditional Chinese serif */
+      "MingLiU", "PMingLiU", "Noto Serif TC",
+      /* Korean serif */
+      "Batang", "NanumMyeongjo", "Noto Serif KR",
+      /* Generic fallback */
+      serif;
+  }
+</style>
 </head>
 <body>
 <div id="content" class="content">
@@ -210,12 +243,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc1da383">1. Example Project</a></li>
-<li><a href="#orgd87208f">2. Key Components</a>
+<li><a href="#orgfeba2fe">1. Example Project</a></li>
+<li><a href="#org254ef90">2. Key Components</a>
 <ul>
-<li><a href="#orgda3ed61">2.1. Server</a></li>
-<li><a href="#org349e0df">2.2. Cargo</a></li>
-<li><a href="#orga37fc0c">2.3. xtask</a></li>
+<li><a href="#orgb94c41a">2.1. Server</a></li>
+<li><a href="#org73d7a13">2.2. Cargo</a></li>
+<li><a href="#org737f6c8">2.3. xtask</a></li>
 </ul>
 </li>
 </ul>
@@ -228,8 +261,8 @@ Some notes for <a href="https://wgpu.rs">wgpu</a>.
 <p>
 I plan to use wgpu as my graphics framework. I mainly need it for shaders and performance. I will use it with wasm so I can do web rendering. The goal is to complete my 3d color selector project.
 </p>
-<div id="outline-container-orgc1da383" class="outline-2">
-<h2 id="orgc1da383"><span class="section-number-2">1.</span> Example Project</h2>
+<div id="outline-container-orgfeba2fe" class="outline-2">
+<h2 id="orgfeba2fe"><span class="section-number-2">1.</span> Example Project</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Find an <a href="https://github.com/gfx-rs/wgpu/tree/trunk/examples">example</a> project that already uses wgpu, wasm, and shaders.
@@ -242,28 +275,28 @@ cargo xtask run-wasm
 </div>
 </div>
 </div>
-<div id="outline-container-orgd87208f" class="outline-2">
-<h2 id="orgd87208f"><span class="section-number-2">2.</span> Key Components</h2>
+<div id="outline-container-org254ef90" class="outline-2">
+<h2 id="org254ef90"><span class="section-number-2">2.</span> Key Components</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgda3ed61" class="outline-3">
-<h3 id="orgda3ed61"><span class="section-number-3">2.1.</span> Server</h3>
+<div id="outline-container-orgb94c41a" class="outline-3">
+<h3 id="orgb94c41a"><span class="section-number-3">2.1.</span> Server</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Light weight server to serve the html and javascript.
 </p>
 </div>
 </div>
-<div id="outline-container-org349e0df" class="outline-3">
-<h3 id="org349e0df"><span class="section-number-3">2.2.</span> Cargo</h3>
+<div id="outline-container-org73d7a13" class="outline-3">
+<h3 id="org73d7a13"><span class="section-number-3">2.2.</span> Cargo</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The workspace root in <code>./Cargo.toml</code> defines members. One of the members is <code>xtask</code>. The package <code>wgpu-xtask</code> is aliased to <code>xtask</code> in <code>./.cargo/config.toml</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orga37fc0c" class="outline-3">
-<h3 id="orga37fc0c"><span class="section-number-3">2.3.</span> xtask</h3>
+<div id="outline-container-org737f6c8" class="outline-3">
+<h3 id="org737f6c8"><span class="section-number-3">2.3.</span> xtask</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The main function parses the arguments to figure out the subcommand. One of the subcommands is <code>run-wasm</code>. <code>xshell</code> is used for executing a series of commands: build (webgpu, webgl), copy static files, and server startup. The build target is <a href="https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-unknown-unknown.html">wasm32-unknown-unknown</a>; this is followed by <a href="https://wasm-bindgen.github.io/wasm-bindgen/">wasm-bindgen</a>.
@@ -328,7 +361,7 @@ Features
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Evan Lee</p>
-<p class="date">Created: 2025-11-27 Thu 12:40</p>
+<p class="date">Created: 2025-11-27 Thu 13:54</p>
 </div>
 </body>
 </html>
