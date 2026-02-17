@@ -6,7 +6,7 @@
 <!-- 2026-02-16 Mon 19:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>wgpu</title>
+<title>Drawing</title>
 <meta name="author" content="Evan Lee" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -209,184 +209,54 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">wgpu</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#orgce60e6b">1. Example Project</a></li>
-<li><a href="#org6e4f918">2. Key Components</a>
-<ul>
-<li><a href="#org95847d1">2.1. Server</a></li>
-<li><a href="#orgd287893">2.2. Cargo</a></li>
-<li><a href="#org4be1416">2.3. xtask</a></li>
-<li><a href="#orge833b24">2.4. wasm-bindgen</a>
-<ul>
-<li><a href="#orgea52619">2.4.1. wasm-bingen binaries</a></li>
-<li><a href="#org27ad482">2.4.2. web-sys</a></li>
-</ul>
-</li>
-<li><a href="#org7415c0a">2.5. Other</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>
-Some notes for <a href="https://wgpu.rs">wgpu</a>.
-</p>
-
-<p>
-I plan to use wgpu as my graphics framework. I mainly need it for shaders and performance. I will use it with wasm so I can do web rendering. The goal is to complete my 3d color selector project.
-</p>
-<div id="outline-container-orgce60e6b" class="outline-2">
-<h2 id="orgce60e6b"><span class="section-number-2">1.</span> Example Project</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-Find an <a href="https://github.com/gfx-rs/wgpu/tree/trunk/examples">example</a> project that already uses wgpu, wasm, and shaders.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell">cargo update
-cargo xtask run-wasm
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-org6e4f918" class="outline-2">
-<h2 id="org6e4f918"><span class="section-number-2">2.</span> Key Components</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org95847d1" class="outline-3">
-<h3 id="org95847d1"><span class="section-number-3">2.1.</span> Server</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-Light weight server to serve the html and javascript.
-</p>
-</div>
-</div>
-<div id="outline-container-orgd287893" class="outline-3">
-<h3 id="orgd287893"><span class="section-number-3">2.2.</span> Cargo</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-The workspace root in <code>./Cargo.toml</code> defines members. One of the members is <code>xtask</code>. The package <code>wgpu-xtask</code> is aliased to <code>xtask</code> in <code>./.cargo/config.toml</code>.
-</p>
-</div>
-</div>
-<div id="outline-container-org4be1416" class="outline-3">
-<h3 id="org4be1416"><span class="section-number-3">2.3.</span> xtask</h3>
-<div class="outline-text-3" id="text-2-3">
-<p>
-The main function parses the arguments to figure out the subcommand. One of the subcommands is <code>run-wasm</code>. <code>xshell</code> is used for executing a series of commands: build (webgpu, webgl), copy static files, and server startup. The build target is <a href="https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-unknown-unknown.html">wasm32-unknown-unknown</a>; this is followed by <a href="https://wasm-bindgen.github.io/wasm-bindgen/">wasm-bindgen</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell">cargo build --target wasm32-unknown-unknown -p wgpu-examples --no-default-features --features webgpu <span style="color: #268bd2;">{</span>release_flag...<span style="color: #268bd2;">}</span>
-wasm-bindgen target/wasm32-unknown-unknown/<span style="color: #268bd2;">{</span>output_dir<span style="color: #268bd2;">}</span>/wgpu-examples.wasm --target web --no-typescript --out-dir target/generated --out-name webgpu
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-shell">cargo build --target wasm32-unknown-unknown -p wgpu-examples --no-default-features --features webgl <span style="color: #268bd2;">{</span>release_flag...<span style="color: #268bd2;">}</span>
-wasm-bindgen target/wasm32-unknown-unknown/<span style="color: #268bd2;">{</span>output_dir<span style="color: #268bd2;">}</span>/wgpu-examples.wasm --target web --no-typescript --out-dir target/generated --out-name webgl2
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-shell">simple-http-server target/generated -c wasm,html,js -i --coep --coop --ip 127.0.0.1
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-orge833b24" class="outline-3">
-<h3 id="orge833b24"><span class="section-number-3">2.4.</span> wasm-bindgen</h3>
-<div class="outline-text-3" id="text-2-4">
-<p>
-<a href="https://github.com/wasm-bindgen/wasm-bindgen">github:wasm-bindgen</a>
-</p>
-
-<p>
-Note that <code>module.default()</code> is called with no arguments from <code>target/generated/index.html</code>. Observe <code>export default __wbg_init;</code> from <code>target/generated/webgpu.js</code>. The default module is <code>webgpu_bg.wasm</code>. The js file is created by <code>wasm-bindgen</code> when <code>--target web</code> is set.
-</p>
-
-<p>
-Since I want to prioritize Rust development and I don&rsquo;t have specific JS dependencies, I will start with <code>--target web</code> and reserve the option to migrate to <code>--target bundler</code> in the future.
-</p>
-
-<p>
-The entry point should be marked by <a href="https://wasm-bindgen.github.io/wasm-bindgen/reference/attributes/on-rust-exports/start.html"><code>#[wasm_bindgen(start)]</code></a>. The examples in wgpu do not use this attribute. They are built from a binary instead of a library. The main function of the binary implicitly has the equivalent of <code>#[wasm_bindgen(start)]</code> which results in a behavior where the main function is called when the wasm module initializes.
-</p>
-</div>
-<div id="outline-container-orgea52619" class="outline-4">
-<h4 id="orgea52619"><span class="section-number-4">2.4.1.</span> wasm-bingen binaries</h4>
-<div class="outline-text-4" id="text-2-4-1">
-<div class="org-src-container">
-<pre class="src src-nil">cargo install wasm-bindgen-cli
-cargo install wasm-pack
-</pre>
-</div>
-
-<p>
-To update rust:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-nil">rustup update
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-org27ad482" class="outline-4">
-<h4 id="org27ad482"><span class="section-number-4">2.4.2.</span> web-sys</h4>
-<div class="outline-text-4" id="text-2-4-2">
-<p>
-Web API Rust bindings.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org7415c0a" class="outline-3">
-<h3 id="org7415c0a"><span class="section-number-3">2.5.</span> Other</h3>
-<div class="outline-text-3" id="text-2-5">
-<p>
-Identify key components.
-</p>
-
-<p>
-How does wasm interface with javascript?
-</p>
-
-<p>
-Create new repo.
-</p>
-
-
-<p>
-Features
-</p>
+<h1 class="title">Drawing</h1>
 <ul class="org-ul">
-<li>Event loop</li>
-<li>Colorspace conversion functions
+<li>(M) Measurement
 <ul class="org-ul">
-<li>XYZ, oklch, rgb, rgb linear</li>
+<li>Proportion and perspective</li>
+<li>Informs all</li>
 </ul></li>
-<li>Light and mix modifiers. Whitepoint.</li>
-<li>Coordinate system</li>
-<li>Basic mesh rendering</li>
-<li>Colorspace mesh generation</li>
-<li>Shader to render the mesh</li>
-<li>Mesh warping</li>
-<li>Wireframe rendering</li>
-<li>Rotation</li>
-<li>Panning</li>
-<li>Zooming</li>
-<li>Resizing</li>
-<li>Projection mapping</li>
-<li>Pointer input</li>
+<li>(SF) Shape flow
+<ul class="org-ul">
+<li>Shape design
+<ul class="org-ul">
+<li>Constructed from (L)</li>
+</ul></li>
+<li>Gesture as construction</li>
+<li>Informs (PA)</li>
+</ul></li>
+<li>(PA) Primitive Arrangement
+<ul class="org-ul">
+<li>Depth and overlap</li>
+<li>Informs (SF)</li>
+</ul></li>
+<li>(L) Line
+<ul class="org-ul">
+<li>Line weight</li>
+</ul></li>
+<li>(V) Value</li>
+<li>(E) Edge</li>
 </ul>
-</div>
-</div>
-</div>
+
+<p>
+M &#x2013;&gt; SF &lt;&#x2013;&gt; PA.
+</p>
+
+<p>
+Mark measurements.
+Construct a shape envelope.
+</p>
+<ul class="org-ul">
+<li>Try <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">Ramer-Douglas-Peucker algorithm</a>.</li>
+<li>See polygonal approximation problem.</li>
+<li>Don&rsquo;t worry about the end points of each line. Focus on the angles.</li>
+</ul>
+<p>
+Mark measurements.
+Fit primitives into the envelope.
+Mark measurements.
+Create interior shapes using the primitives.
+</p>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Evan Lee</p>
